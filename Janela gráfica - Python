@@ -1,0 +1,32 @@
+'''Criando uma Janela Gráfica Simples'''
+
+
+import tkinter as tk
+
+
+def clique():
+    label.config(text="Botão foi Clicado!")
+
+def mostrar_informacao():
+    texto = entrada.get()
+    label.config(text=texto)
+
+def saudacao():
+    label.config(text="Olá, Tkinter!")
+
+'''Código Principal'''
+
+janela = tk.Tk()
+janela.title("Minha primeira Janela Gráfica")
+janela.geometry("300x200")
+
+frame = tk.Frame(janela)
+frame.pack(pady=10)
+
+botao = tk.Button(janela, text="Clique Aqui", command=saudacao)
+botao.pack(side="left")
+
+label = tk.Label(frame, text="Aguardando...")
+label.pack(side="left")
+
+janela.mainloop()
