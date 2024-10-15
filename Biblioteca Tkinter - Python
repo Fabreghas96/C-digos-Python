@@ -28,3 +28,8 @@ label_senha.pack(pady=20)
 
 entrada_pwd = tk.Entry(janela, show="*")
 entrada_pwd.pack()
+botao_login = tk.Button(janela, text="LOGIN", command=verificar_login)
+botao_login.pack(pady=20)
+
+janela.mainloop()
+
