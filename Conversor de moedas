@@ -1,0 +1,71 @@
+#Ctk label = Para colocar texto na tela
+#Ctk Entry = Colocar texto no bloco criado
+#Ctk button = Criar bloco para digitar
+#Site para ícones = ico - icons
+
+
+import customtkinter as ctk
+
+from tkinter import messagebox #janelaflutuante para o resultado
+
+ctk.set_appearance_mode('dark')
+
+#---------------funções---------------
+
+def calculo():
+    v = float(valor.get())
+    c = float(cotacao.get())
+
+    valorfinal = v*c
+    messagebox.showinfo('Resultado', f'O valor convertido em reais é R$: {valorfinal}') #Resultado do valor final
+    
+
+
+
+#---------------Fabricio---------------
+
+janela = ctk.CTk()
+janela.geometry('400x250')
+
+janela.resizable(False,False)
+janela.title('Sistema de conversão de moedas')
+janela.iconbitmap('coin_money_icon-icons.com_51091.ico')
+
+
+
+ctk.CTkLabel(janela,
+             text='Sistema de Conversão',
+             text_color='red',
+             font=('arial', 16,)).pack(pady=10)
+
+
+
+valor = ctk.CTkEntry(janela, 
+                     width=350,
+                     height=30,
+                     placeholder_text='Digite o valor em dolar: ')
+
+
+valor.pack()
+
+
+
+cotacao = ctk.CTkEntry(janela, 
+                     width=350,
+                     height=30,
+                     placeholder_text='Digite a cotação atual do dolar: ')
+cotacao.pack(pady=10)
+
+
+botao = ctk.CTkButton(janela,
+                      text='Calcular',
+                      width=150,
+                      height=40,
+                      fg_color='green',
+                      command=calculo)
+
+
+
+botao.pack(pady=10)
+
+janela.mainloop()
