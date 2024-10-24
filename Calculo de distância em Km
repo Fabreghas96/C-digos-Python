@@ -1,0 +1,7 @@
+def distancia():
+    km = int(input('Digite a distância da viagem: '))
+    if km <= 200:
+        soma = km*0.50
+        print(f'A distância é de {km} e o valor da passagem é de {soma}')
+
+distancia()
