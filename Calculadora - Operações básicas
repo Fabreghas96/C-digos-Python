@@ -1,4 +1,6 @@
 import customtkinter as ctk
+from tkinter import messagebox
+
 
 # Função para realizar as operações
 
@@ -6,6 +8,7 @@ def calcular(operacao):
     try:
         num1 = float(entrada1.get())
         num2 = float(entrada2.get())
+        
         
         if operacao == "add":
             resultado.set(num1 + num2)
@@ -23,52 +26,56 @@ def calcular(operacao):
 
 # Configurações da janela principal
 
-app = ctk.CTk()
-app.geometry("300x400")
-app.title("Calculadora")
+janela = ctk.CTk()
+janela.geometry("300x400")
+janela.title("Calculadora")
 
 
 # Variáveis de controle
-
 resultado = ctk.StringVar()
 
 # Campo de entrada para o primeiro número
+entrada = ctk.CTkLabel(janela,
+                        text='Calculadora',
+                        font=('Arial',26)).pack(pady = 10)
 
-entrada1 = ctk.CTkEntry(app, placeholder_text="Digite o primeiro número",
+entrada1 = ctk.CTkEntry(janela, placeholder_text="Digite o primeiro número",
                         width=200,
                         height=30)
 entrada1.pack(pady=10)
 
 # Campo de entrada para o segundo número
 
-entrada2 = ctk.CTkEntry(app, placeholder_text="Digite o segundo número",
+entrada2 = ctk.CTkEntry(janela, placeholder_text="Digite o segundo número",
                         width=200,
                         height=30)
 entrada2.pack(pady=10)
 
 # Botões de operação
 
-botao_add = ctk.CTkButton(app, 
+botao_add = ctk.CTkButton(janela, 
                           text=" + (Adição)", 
                           command=lambda: calcular("add"))
 botao_add.pack(pady=10)
 
-botao_sub = ctk.CTkButton(app, text=" - (Subtração)",
+botao_sub = ctk.CTkButton(janela, text=" - (Subtração)",
                          command=lambda: calcular("sub"))
 botao_sub.pack(pady=10)
 
-botao_mul = ctk.CTkButton(app, text=" * (Multiplicação)", 
+botao_mul = ctk.CTkButton(janela, text=" * (Multiplicação)", 
                           command=lambda: calcular("mul"))
 botao_mul.pack(pady=10)
 
-botao_div = ctk.CTkButton(app, text="/ (Divisão)", 
+botao_div = ctk.CTkButton(janela, text="/ (Divisão)", 
                           command=lambda: calcular("div"))
 botao_div.pack(pady=10)
 
 # Campo de exibição do resultado
-label_resultado = ctk.CTkLabel(app, textvariable=resultado, 
+
+label_resultado = ctk.CTkLabel(janela, 
+                               textvariable=resultado, 
                                font=("Arial", 20))
 label_resultado.pack(pady=20)
 
 # Iniciar a aplicação
-app.mainloop()
+janela.mainloop()
