@@ -1,0 +1,74 @@
+import customtkinter as ctk
+
+# Função para realizar as operações
+
+def calcular(operacao):
+    try:
+        num1 = float(entrada1.get())
+        num2 = float(entrada2.get())
+        
+        if operacao == "add":
+            resultado.set(num1 + num2)
+        elif operacao == "sub":
+            resultado.set(num1 - num2)
+        elif operacao == "mul":
+            resultado.set(num1 * num2)
+        elif operacao == "div":
+            if num2 != 0:
+                resultado.set(num1 / num2)
+            else:
+                resultado.set("Erro (divisão por zero)")
+    except ValueError:
+        resultado.set("Erro (entrada inválida)")
+
+# Configurações da janela principal
+
+app = ctk.CTk()
+app.geometry("300x400")
+app.title("Calculadora")
+
+
+# Variáveis de controle
+
+resultado = ctk.StringVar()
+
+# Campo de entrada para o primeiro número
+
+entrada1 = ctk.CTkEntry(app, placeholder_text="Digite o primeiro número",
+                        width=200,
+                        height=30)
+entrada1.pack(pady=10)
+
+# Campo de entrada para o segundo número
+
+entrada2 = ctk.CTkEntry(app, placeholder_text="Digite o segundo número",
+                        width=200,
+                        height=30)
+entrada2.pack(pady=10)
+
+# Botões de operação
+
+botao_add = ctk.CTkButton(app, 
+                          text=" + (Adição)", 
+                          command=lambda: calcular("add"))
+botao_add.pack(pady=10)
+
+botao_sub = ctk.CTkButton(app, text=" - (Subtração)",
+                         command=lambda: calcular("sub"))
+botao_sub.pack(pady=10)
+
+botao_mul = ctk.CTkButton(app, text=" * (Multiplicação)", 
+                          command=lambda: calcular("mul"))
+botao_mul.pack(pady=10)
+
+botao_div = ctk.CTkButton(app, text="/ (Divisão)", 
+                          command=lambda: calcular("div"))
+botao_div.pack(pady=10)
+
+# Campo de exibição do resultado
+label_resultado = ctk.CTkLabel(app, textvariable=resultado, 
+                               font=("Arial", 20))
+label_resultado.pack(pady=20)
+
+# Iniciar a aplicação
+app.mainloop()
