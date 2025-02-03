@@ -1,80 +1,115 @@
-Conversão para Maiúsculas e Minúsculas
+1. Conversão para Maiúsculas e Minúsculas
 Pitão
 
 Copiar
 texto = "Olá Mundo"
 print(texto.upper())  # Converte para maiúsculas
 print(texto.lower())  # Converte para minúsculas
+Saída :
 
+css
 
--------------------------------------------------------------------------------------------------------------------------
+Copiar
+OLÁ MUNDO
+olá mundo
 
-Substituição de Texto
+--------------------------------------------------------------------------------------------------------------
+
+2. Substituição de Texto
 Pitão
 
 Copiar
 texto = "Eu gosto de maçã"
 novo_texto = texto.replace("maçã", "banana")
 print(novo_texto)  # Substitui "maçã" por "banana"
+Saída :
 
--------------------------------------------------------------------------------------------------------------------------
+nginx
 
-Remover Espaços Extras
+Copiar
+Eu gosto de banana
+
+--------------------------------------------------------------------------------------------------------------
+
+3. Remover Espaços Extras
 Pitão
 
 Copiar
 texto = "  Olá, Mundo!  "
 print(texto.strip())  # Remove os espaços no início e no final
+Saída :
 
--------------------------------------------------------------------------------------------------------------------------
+css
 
+Copiar
+Olá, Mundo!
 
-Dividir Texto
+--------------------------------------------------------------------------------------------------------------
+
+4. Dividir Texto
 Pitão
 
 Copiar
 texto = "maçã,banana,laranja"
 lista_frutas = texto.split(",")  # Divide a string nas vírgulas
 print(lista_frutas)
+Saída :
 
--------------------------------------------------------------------------------------------------------------------------
+ferrugem
 
+Copiar
+['maçã', 'banana', 'laranja']
 
-Fatiamento de Texto
+--------------------------------------------------------------------------------------------------------------
+
+5. Fatiamento de Texto
 Pitão
 
 Copiar
 texto = "Python é incrível"
 print(texto[0:6])  # Extrai os 6 primeiros caracteres
 print(texto[-9:])  # Extrai os 9 últimos caracteres
+Saída:
 
--------------------------------------------------------------------------------------------------------------------------
+nginx
 
+Copiar
+Python
+incrível
 
-Busca de Substring
+--------------------------------------------------------------------------------------------------------------
+
+6. Busca de Substring
 Pitão
 
 Copiar
 texto = "O sol está brilhando"
 indice = texto.find("sol")  # Encontra a posição da palavra "sol"
 print(indice)  # Retorna a posição onde "sol" começa
+Saída :
 
--------------------------------------------------------------------------------------------------------------------------
 
+Copiar
+2
 
-Contagem de Ocorrências
+--------------------------------------------------------------------------------------------------------------
+
+7. Contagem de Ocorrências
 Pitão
 
 Copiar
 texto = "banana"
 contagem = texto.count("a")  # Conta quantas vezes "a" aparece na string
 print(contagem)
+Saída :
 
 
--------------------------------------------------------------------------------------------------------------------------
+Copiar
+3
 
+--------------------------------------------------------------------------------------------------------------
 
-Formatação de Texto
+8. Formatação de Texto
 Pitão
 
 Copiar
@@ -82,22 +117,33 @@ nome = "João"
 idade = 30
 frase = f"Meu nome é {nome} e eu tenho {idade} anos."
 print(frase)
+Saída :
 
--------------------------------------------------------------------------------------------------------------------------
+nginx
 
+Copiar
+Meu nome é João e eu tenho 30 anos.
 
-Transformação de Palavras em Títulos
+--------------------------------------------------------------------------------------------------------------
+
+9. Transformação de Palavras em Títulos
 Pitão
 
 Copiar
 texto = "bem-vindo ao mundo da programação"
 titulo = texto.title()  # Transforma a primeira letra de cada palavra em maiúscula
 print(titulo)
+Saída :
 
--------------------------------------------------------------------------------------------------------------------------
+
+Copiar
+Bem-Vindo Ao Mundo Da Programação
 
 
-Verifique se uma substring está presente
+--------------------------------------------------------------------------------------------------------------
+
+
+10. Verifique se uma substring está presente
 Pitão
 
 Copiar
@@ -106,4 +152,10 @@ if "ótimo" in texto:
     print("A palavra 'ótimo' está presente no texto.")
 else:
     print("A palavra 'ótimo' não está presente.")
+Saída :
+
+nginx
+
+Copiar
+A palavra 'ótimo' está presente no texto.
 
